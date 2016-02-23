@@ -1,0 +1,11 @@
+<h1>
+    <div class="offer">
+        <div class="date">{{ data['date'] }}</div>
+    </div>
+</h1>
+
+<ul class="rooms">
+    {% for room in data['rooms']%}
+        <li class="name">{{ room }}</li>
+    {% endfor %}
+</ul>

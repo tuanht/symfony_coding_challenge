@@ -1,0 +1,7 @@
+tuan_hotel:
+    resource: "@TuanHotelBundle/Resources/config/routing.yml"
+    prefix:   /api/
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

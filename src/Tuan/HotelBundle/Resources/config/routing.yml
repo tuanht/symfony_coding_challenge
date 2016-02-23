@@ -1,0 +1,15 @@
+tuan_hotel_homepage:
+    path: /
+    defaults: { _controller: TuanHotelBundle:Default:index }
+
+add_offer:
+    path:     /offers
+    defaults: { _controller: tuan_hotel.offer_controller:addOfferAction }
+    requirements:
+        method: POST
+
+remove_offer:
+    path:     /offers/{id}
+    defaults: { _controller: tuan_hotel.offer_controller:removeOfferAction }
+    requirements:
+        method: DELETE

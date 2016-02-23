@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <services>
+        <service id="tuan_hotel.room_finder" class="Tuan\HotelBundle\Services\RoomFinder" />
+
+        <service id="tuan_hotel.offer_manager" class="Tuan\HotelBundle\Services\OfferManager">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+
+        <service id="tuan_hotel.offer_controller" class="Tuan\HotelBundle\Controller\OfferController">
+            <argument type="service" id="fos_rest.view_handler" />
+            <argument type="service" id="tuan_hotel.offer_manager" />
+            <argument type="service" id="tuan_hotel.room_finder" />
+        </service>
+    </services>
+
+</container>
