@@ -48,6 +48,14 @@ class OfferControllerTest extends WebTestCase
         );
 
         $this->assertEquals(Response::HTTP_BAD_REQUEST, $client->getResponse()->getStatusCode());
+
+        $client->request(
+            'POST',
+            '/api/offers',
+            ['date' => date('Y-m-d', time())]
+        );
+
+        $this->assertEquals(Response::HTTP_BAD_REQUEST, $client->getResponse()->getStatusCode());
     }
 
     public function testRemoveSuccess()

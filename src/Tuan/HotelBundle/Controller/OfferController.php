@@ -37,7 +37,7 @@ class OfferController
     {
         $checkInDate = date_create_from_format('Y-m-d', $request->get('date'));
 
-        if (!$checkInDate) {
+        if (!$checkInDate || $checkInDate->getTimestamp() <= time()) {
             return new Response('', Response::HTTP_BAD_REQUEST);
         }
 
